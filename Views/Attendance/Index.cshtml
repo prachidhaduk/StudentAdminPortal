@@ -1,0 +1,75 @@
+﻿@model IEnumerable<StudentAdminPortal.Models.Attendance>
+
+@{
+    ViewBag.Title = "Attendance";
+}
+
+<h2>Attendance</h2>
+
+<p>
+    @Html.ActionLink(
+        "Mark Attendance",
+        "Create",
+        null,
+        new { @class = "btn btn-primary" }
+    )
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Student</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Student.FirstName
+                    @item.Student.LastName
+                    (@item.Student.EnrollmentNo)
+                </td>
+
+                <td>
+                    @item.AttendanceDate.ToString("dd-MM-yyyy")
+                </td>
+
+                <td>
+                    @if (item.IsPresent)
+                    {
+                        <span class="text-success">
+                            Present
+                        </span>
+                    }
+                    else
+                    {
+                        <span class="text-danger">
+                            Absent
+                        </span>
+                    }
+                </td>
+
+                <td>
+                    @Html.ActionLink(
+                        "Edit",
+                        "Edit",
+                        new { id = item.AttendanceId },
+                        new { @class = "btn btn-sm btn-warning" }
+                    )
+
+                    @Html.ActionLink(
+                        "Delete",
+                        "Delete",
+                        new { id = item.AttendanceId },
+                        new { @class = "btn btn-sm btn-danger" }
+                    )
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

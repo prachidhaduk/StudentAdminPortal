@@ -1,0 +1,74 @@
+﻿@model StudentAdminPortal.Models.Mark
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Mark</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Student.EnrollmentNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student.EnrollmentNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject.SubjectName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject.SubjectName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InternalMarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InternalMarks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExternalMarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExternalMarks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalMarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalMarks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Percentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Percentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Grade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grade)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MarkId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

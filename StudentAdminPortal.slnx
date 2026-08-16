@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../StudentAdminPortal.Tests/StudentAdminPortal.Tests.csproj" Id="ef889502-af52-4771-9a44-54421053997a" />
+  <Project Path="StudentAdminPortal.csproj" Id="760c9947-7a19-48ac-a7c6-bed69ec21f80" />
+</Solution>
